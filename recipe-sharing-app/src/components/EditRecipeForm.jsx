@@ -8,8 +8,8 @@ const EditRecipeForm = ({ recipe }) => {
   const [description, setDescription] = React.useState(recipe.description);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     updateRecipe(recipe.id, { title, description });
     navigate(`/recipe/${recipe.id}`);
   };
