@@ -30,8 +30,7 @@ import { useRecipeStore } from '../store';
         >
           {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
         </button>
-        <EditRecipeForm recipe={recipe} />
-        <DeleteRecipeButton recipeId={recipeId} />
+        
       </div>
     );
 };
