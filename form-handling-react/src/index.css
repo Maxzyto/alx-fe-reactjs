@@ -27,6 +27,15 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+home {
+   margin: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
   font-size: 4rem;
   font-weight: 800;
 }

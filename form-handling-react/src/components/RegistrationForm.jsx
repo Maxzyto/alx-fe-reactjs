@@ -1,81 +1,74 @@
-import { useState } from "react";
+// src/components/RegistrationForm.js (Controlled Form)
+import React, { useState } from "react";
 
-const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+function RegistrationForm() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const validationErrors = {};
 
-    if (!formData.username || !formData.email || !formData.password) {
-      setError("All fields are required.");
+    if (!username.trim()) {
+      validationErrors.username = "Username is required";
+    }
+    if (!email.trim()) {
+      validationErrors.email = "Email is required";
+    }
+    if (!password.trim()) {
+      validationErrors.password = "Password is required";
+    }
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
-    setError("");
-    console.log("Form submitted", formData);
+    // Form is valid, submit data (replace with your API call)
+    console.log({ username, email, password });
+    setErrors({});
+    setUsername("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="p-4 border rounded shadow-md max-w-sm mx-auto"
-    >
-      <h2 className="text-xl font-bold mb-4">Register</h2>
-      {error && <p className="text-red-500 mb-2">{error}</p>}
-
-      <div className="mb-2">
-        <label className="block font-medium">Username:</label>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="username">Username:</label>
         <input
           type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          className="border rounded p-2 w-full"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
+        {errors.username && <p style={{ color: "red" }}>{errors.username}</p>}
       </div>
-
-      <div className="mb-2">
-        <label className="block font-medium">Email:</label>
+      <div>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="border rounded p-2 w-full"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
+        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
       </div>
-
-      <div className="mb-2">
-        <label className="block font-medium">Password:</label>
+      <div>
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          className="border rounded p-2 w-full"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
+        {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
       </div>
-
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        Submit
-      </button>
+      <button type="submit">Register</button>
     </form>
   );
-};
+}
 
 export default RegistrationForm;

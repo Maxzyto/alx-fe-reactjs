@@ -1,8 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function HomePage() {
   return (
-    <div>Welcome to HomePage</div>
+    <div>
+      <div className='home'>
+        <h1>Home Page</h1>
+        <p>Welcome to the Home Page</p>
+      </div>
+
+      <div className='links'>
+        <Link to='/login'>Login</Link>
+      </div>
+      
+      <button className='button'>Sign Up</button>
+    </div>
   )
 }
 
