@@ -15,7 +15,7 @@ const RecommendationsList = () => {
     <div>
       <h2>Recommended Recipes</h2>
       {recommendations.length > 0 ? (
-        recommendations.map((recipe) => recipe && (
+       Array.isArray(recommendations) && recommendations.map((recipe) => recipe && (
           <div key={recipe.id}>
             <h3>{recipe.title}</h3>
             <p>{recipe.description}</p>
