@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
-import RegistrationForm from '../components/RegistrationForm';
+import RegistrationForm from '../pages/RegistrationForm';
 import FormikForm from '../components/formiForm';
+import Login from '../pages/LoginPage';
 
 const Router = createBrowserRouter([
   {
@@ -9,12 +10,16 @@ const Router = createBrowserRouter([
     Component: HomePage,
   },
   {
-    path: '../components/RegistrationForm.jsx',
+    path: '/RegistrationForm.jsx',
     Component: RegistrationForm,
   },
   {
     path: '../components/formiForm.js',
     Component: FormikForm,
+  },
+  {
+    path: '/login',
+    Component: Login,
   }
 ]);
 

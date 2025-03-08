@@ -13,7 +13,7 @@ function HomePage() {
         <Link to='/login'>Login</Link>
       </div>
       
-      <button className='button'>Sign Up</button>
+      <button className=' sign_up'>Sign Up</button>
     </div>
   )
 }
