@@ -11,14 +11,14 @@ function RegistrationForm() {
     e.preventDefault();
     const validationErrors = {};
 
-    if (!username.trim()) {
-      validationErrors.username = "Username is required";
-    }
-    if (!email.trim()) {
+    if (!email) {
       validationErrors.email = "Email is required";
     }
-    if (!password.trim()) {
+    if (!password) {
       validationErrors.password = "Password is required";
+    }
+    if (!username) {
+      validationErrors.username = "Username is required";
     }
 
     if (Object.keys(validationErrors).length > 0) {
@@ -26,8 +26,6 @@ function RegistrationForm() {
       return;
     }
 
-    // Form is valid, submit data (replace with your API call)
-    console.log({ username, email, password });
     setErrors({});
     setUsername("");
     setEmail("");
