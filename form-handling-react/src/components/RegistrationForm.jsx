@@ -35,7 +35,7 @@ function RegistrationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='reg_form' onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
         <input
