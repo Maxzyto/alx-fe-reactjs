@@ -1,8 +1,20 @@
- function Home() {
+import { Link } from "react-router-dom";
+
+function Home() {
   return (
     <div>
-      <h2>Home</h2>
-      <p>Welcome to our website!</p>
+      <h1>Welcome to the Blog</h1>
+      <ul>
+        <li>
+          <Link to="/blog/1">Read Blog Post 1</Link>
+        </li>
+        <li>
+          <Link to="/blog/2">Read Blog Post 2</Link>
+        </li>
+        <li>
+          <Link to="/blog/3">Read Blog Post 3</Link>
+        </li>
+      </ul>
     </div>
   );
 }
