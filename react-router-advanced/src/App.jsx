@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 
-import Profile from "./pages/profile/profile";
+import Profile from "./components/Profile";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
