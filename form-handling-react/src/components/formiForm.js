@@ -33,7 +33,7 @@ function FormikForm() {
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <Field type="email" id="email" name="email" />
+        <Field type="email" id="email" name="email" />
           <ErrorMessage name="email" component="p" />
         </div>
         <div>
