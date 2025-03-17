@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 export const RecipeDetail = () => {
 
   const [recipe, setRecipe] = useState(null);
+  const id = useParams; // Define the id variable with a value
 
   useEffect(() => {
     fetch("/src/data.json")
@@ -12,7 +14,7 @@ export const RecipeDetail = () => {
         setRecipe(selectedRecipe);
         setRecipe(selectedRecipe);
       });
-  }, []);
+  }, [id]);
 
   if (!recipe) {
     return <div>Loading...</div>;
