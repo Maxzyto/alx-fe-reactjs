@@ -3,18 +3,18 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "/public/assests/1.png"
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "image": "/public/assests/2.png"
   },
   {
     "id": 3,
     "title": "Margherita Pizza",
     "summary": "A simple yet delicious pizza topped with tomatoes, fresh basil, and mozzarella cheese.",
-    "image": "https://via.placeholder.com/150"
+    "image": "/public/assests/3.png"
   }
 ]
