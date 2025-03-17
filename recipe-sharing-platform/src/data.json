@@ -16,5 +16,23 @@
     "title": "Margherita Pizza",
     "summary": "A simple yet delicious pizza topped with tomatoes, fresh basil, and mozzarella cheese.",
     "image": "/public/assests/3.png"
+  },
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "/public/assests/4.png"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "/public/assests/5.png"
+  },
+  {
+    "id": 3,
+    "title": "Margherita Pizza",
+    "summary": "A simple yet delicious pizza topped with tomatoes, fresh basil, and mozzarella cheese.",
+    "image": "/public/assests/6.png"
   }
 ]
