@@ -17,6 +17,17 @@ const Homepage = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-5">
       <h1 className="text-3xl font-bold text-center mb-6">Recipe List</h1>
+
+      {/* Add Recipe Button */}
+      <div className="flex justify-center mb-6">
+        <Link
+          to="/add-recipe"
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+        >
+          + Add New Recipe
+        </Link>
+      </div>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {recipes.map((recipe) => (
           <Link
