@@ -31,31 +31,30 @@ export const RecipeDetail = () => {
         <h1 className="text-3xl font-bold mt-4">{recipe.title}</h1>
         <p className="text-gray-600 mt-2">{recipe.summary}</p>
 
+        {/* Ingredients List */}
         <div className="mt-4">
           <h2 className="text-xl font-semibold mb-2">Ingredients</h2>
           <ul className="list-disc list-inside text-gray-700">
-            <li>Ingredient 1</li>
-            <li>Ingredient 2</li>
-            <li>Ingredient 3</li>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
           </ul>
         </div>
 
+        {/* Instructions List */}
         <div className="mt-4">
           <h2 className="text-xl font-semibold mb-2">Instructions</h2>
-          <p className="text-gray-700">
-            Step 1: Do this. <br />
-            Step 2: Do that. <br />
-            Step 3: Enjoy!
-          </p>
+          <ol className="list-decimal list-inside text-gray-700 space-y-1">
+            {recipe.instructions.map((step, index) => (
+              <li key={index}>{step}</li>
+            ))}
+          </ol>
         </div>
 
-        <a
-          href="/"
-          className="inline-block mt-4 text-blue-500 hover:underline"
-        >
+        <a href="/" className="inline-block mt-4 text-blue-500 hover:underline">
           ← Back to Home
         </a>
       </div>
     </div>
-  )
+  );
 }
