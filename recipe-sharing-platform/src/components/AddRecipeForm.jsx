@@ -4,14 +4,14 @@ const AddRecipeForm = () => {
 
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [instructions, setInstructions] = useState("");
+  const [steps, setInstructions] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validation: Check if all fields are filled
-    if (!title || !ingredients || !instructions) {
+    if (!title || !ingredients || !steps) {
       setError("All fields are required!");
       return;
     }
@@ -29,10 +29,10 @@ const AddRecipeForm = () => {
     const newRecipe = {
       id: Date.now(), // Generate unique ID
       title,
-      summary: instructions.substring(0, 50) + "...", // Short summary
+      summary: steps.substring(0, 50) + "...", // Short summary
       image: "https://via.placeholder.com/150", // Placeholder image
       ingredients: ingredientsArray,
-      instructions: instructions.split("\n").filter((step) => step.trim() !== ""),
+      steps: steps.split("\n").filter((step) => step.trim() !== ""),
     };
 
     console.log("New Recipe Added:", newRecipe);
@@ -80,7 +80,7 @@ const AddRecipeForm = () => {
             <label className="block text-gray-700 font-medium">Preparation Steps (One per line)</label>
             <textarea
               className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={instructions}
+              value={steps}
               onChange={(e) => setInstructions(e.target.value)}
               rows="4"
               placeholder="Example: \nStep 1: Preheat oven \nStep 2: Mix ingredients"
