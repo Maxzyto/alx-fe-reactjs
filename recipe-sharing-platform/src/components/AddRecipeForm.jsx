@@ -6,24 +6,41 @@ const AddRecipeForm = () => {
   const [ingredients, setIngredients] = useState("");
   const [steps, setInstructions] = useState("");
   const [error, setError] = useState("");
-  const validate = (field, value) => {
-    if (!value.trim()) {
-      setError(`${field} is required.`);
-      return false;
+  const [errors, setErrors] = useState({});
+
+const validate = () => {
+  let newErrors = {};
+
+  if (!title.trim()) newErrors.title = "Recipe title is required.";
+  if (!ingredients.trim()) {
+    newErrors.ingredients = "Please enter at least 2 ingredients.";
+  } else {
+    const ingredientsArray = ingredients
+      .split("\n")
+      .filter((ing) => ing.trim() !== "");
+    if (ingredientsArray.length < 2) {
+      newErrors.ingredients = "At least 2 ingredients are required.";
     }
-    setError("");
-    return true;
-  };
+  }
+
+  if (!steps.trim()) {
+    newErrors.steps = "Please enter preparation steps.";
+  } else {
+    const instructionsArray = steps
+      .split("\n")
+      .filter((step) => step.trim() !== "");
+    if (instructionsArray.length < 2) {
+      newErrors.steps = "At least 2 steps are required.";
+    }
+  }
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
-
-    // Validation: Check if all fields are filled
-    if (!title || !ingredients || !steps) {
-      setError("All fields are required!");
-      return;
-    }
 
     // Ensure at least 2 ingredients
     const ingredientsArray = ingredients.split("\n").filter((ing) => ing.trim() !== "");
@@ -50,6 +67,7 @@ const AddRecipeForm = () => {
     setTitle("");
     setIngredients("");
     setInstructions("");
+    setError({});
   };
 
   return (
