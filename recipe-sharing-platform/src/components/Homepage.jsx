@@ -3,7 +3,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-const Homepage = () => {
+const HomePage = () => {
 
   const [recipes, setRecipes] = useState([]);
 
@@ -54,4 +54,4 @@ const Homepage = () => {
   );
 }
 
-export default Homepage
+export default HomePage
