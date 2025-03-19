@@ -63,9 +63,9 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 mix-blend-screen flex items-center justify-center px-5">
-      <div className="max-w-lg w-full bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-2xl font-bold mb-4 text-center">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
+      <div className="w-full sm:w-3/4 md:w-3/4 lg:w-1/2 bg-white shadow-lg rounded-lg p-6">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           Add a New Recipe
         </h2>
 
